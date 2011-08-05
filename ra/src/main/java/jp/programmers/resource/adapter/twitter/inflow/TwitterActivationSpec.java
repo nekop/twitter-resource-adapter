@@ -21,6 +21,9 @@ public class TwitterActivationSpec implements ActivationSpec {
     @ConfigProperty(defaultValue = "")
     private String query;
 
+    @ConfigProperty(defaultValue = "10000")
+    private Integer interval;
+    
     public void validate() throws InvalidPropertyException {
     }
 
@@ -38,6 +41,14 @@ public class TwitterActivationSpec implements ActivationSpec {
     
     public void setQuery(String query) {
         this.query = query;
+    }
+
+    public Integer getInterval() {
+        return interval;
+    }
+    
+    public void setInterval(Integer interval) {
+        this.interval = interval;
     }
 
 }

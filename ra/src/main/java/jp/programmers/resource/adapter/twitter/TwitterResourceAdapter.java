@@ -1,5 +1,6 @@
 package jp.programmers.resource.adapter.twitter;
 
+import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 import javax.resource.ResourceException;
@@ -23,7 +24,8 @@ public class TwitterResourceAdapter implements ResourceAdapter {
     Logger log = Logger.getLogger("TwitterResourceAdapter");
     ConcurrentHashMap<TwitterActivationSpec, TwitterActivation> activations =
         new ConcurrentHashMap<TwitterActivationSpec, TwitterActivation>();
-
+    BootstrapContext context;
+    
     public void endpointActivation(MessageEndpointFactory endpointFactory,
                                    ActivationSpec spec)
         throws ResourceException {
@@ -40,18 +42,26 @@ public class TwitterResourceAdapter implements ResourceAdapter {
         }
     }
 
-    public void start(BootstrapContext ctx)
+    public void start(BootstrapContext context)
         throws ResourceAdapterInternalException {
-
+        this.context = context;
     }
 
     public void stop() {
-
+        for (Iterator<TwitterActivation> it = activations.values().iterator(); it.hasNext();) {
+            TwitterActivation activation = it.next();
+            activation.stop();
+            it.remove();
+        }
     }
 
     public XAResource[] getXAResources(ActivationSpec[] specs)
         throws ResourceException {
         return null;
+    }
+
+    public BootstrapContext getBootstrapContext() {
+        return context;
     }
 
 }
