@@ -9,7 +9,7 @@
   <version>0.1</version>
 
   <modules>
-    <module>ra-api</module>
+    <module>impl</module>
     <module>ra</module>
     <module>example</module>
   </modules>

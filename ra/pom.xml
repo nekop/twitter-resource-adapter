@@ -19,22 +19,9 @@
     </dependency>
     <dependency>
       <groupId>jp.programmers.resource.adapter</groupId>
-      <artifactId>twitter-ra-api</artifactId>
+      <artifactId>twitter-ra-impl</artifactId>
       <type>jar</type>
       <version>0.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.spec</groupId>
-      <artifactId>jboss-javaee-6.0</artifactId>
-      <version>2.0.0.Final</version>
-      <type>pom</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.8.1</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -42,15 +29,5 @@
     <finalName>${pom.artifactId}</finalName>
     <sourceDirectory>src/main</sourceDirectory>
     <testSourceDirectory>src/test</testSourceDirectory>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
-        </configuration>
-      </plugin>
-    </plugins>
   </build> 
 </project>

@@ -20,10 +20,9 @@
     </dependency>
     <dependency>
       <groupId>jp.programmers.resource.adapter</groupId>
-      <artifactId>twitter-ra-api</artifactId>
+      <artifactId>twitter-ra-impl</artifactId>
       <type>jar</type>
       <version>0.1</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.jboss.ejb3</groupId>
@@ -51,6 +50,21 @@
         <configuration>
           <source>1.5</source>
           <target>1.5</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <index>true</index>
+            <manifest>
+              <addClasspath>true</addClasspath>
+            </manifest>
+            <manifestEntries>
+              <Dependencies>deployment.twitter-ra.rar</Dependencies>
+            </manifestEntries>
+          </archive>
         </configuration>
       </plugin>
     </plugins>
