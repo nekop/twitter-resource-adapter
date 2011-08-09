@@ -80,6 +80,7 @@ public class TwitterActivation extends TimerTask implements XAResource {
     }
 
     public void run() {
+        log.log(FINE, "Twitter search query={0}", spec.getQuery());
         Query query = new Query(spec.getQuery());
         query.setSinceId(lastId);
         try {
@@ -88,6 +89,7 @@ public class TwitterActivation extends TimerTask implements XAResource {
             if (tweets != null && tweets.size() > 0) {
                 lastId = tweets.get(0).getId();
             }
+            log.log(FINE, "{0} results found, lastId={1}", new Object[] {tweets.size(), lastId});
             for (Tweet tweet : tweets) {
                 try {
                     endpoint.beforeDelivery(ON_TWEET);
