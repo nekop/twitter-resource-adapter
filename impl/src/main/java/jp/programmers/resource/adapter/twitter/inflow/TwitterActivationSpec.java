@@ -21,9 +21,10 @@ public class TwitterActivationSpec implements ActivationSpec {
     @ConfigProperty(defaultValue = "")
     private String query;
 
+    // TODO: The ConfigProperty.defaultValue is not working. NPE without the initial value
     @ConfigProperty(defaultValue = "10000")
-    private Integer interval;
-    
+    private Integer interval = 10000;
+
     public void validate() throws InvalidPropertyException {
     }
 
