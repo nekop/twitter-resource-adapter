@@ -1,7 +1,10 @@
 package jp.programmers.resource.adapter.twitter.inflow;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Logger;
@@ -90,7 +93,10 @@ public class TwitterActivation extends TimerTask implements XAResource {
                 lastId = tweets.get(0).getId();
             }
             log.log(FINE, "{0} results found, lastId={1}", new Object[] {tweets.size(), lastId});
-            for (Tweet tweet : tweets) {
+            // The list is newest first but we need oldest first
+            // Reverse iterate
+            for (ListIterator<Tweet> it = tweets.listIterator(tweets.size()); it.hasPrevious(); ) {
+                Tweet tweet = it.previous();
                 try {
                     endpoint.beforeDelivery(ON_TWEET);
                     try {
