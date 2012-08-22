@@ -10,8 +10,7 @@ import twitter4j.Tweet;
 @MessageDriven(activationConfig={
    @ActivationConfigProperty(propertyName="query", propertyValue="jboss")
 })
-// @ResourceAdapter("twitter-ra.rar") // This doesen't work in JBoss AS 7.0.0
-@ResourceAdapter("twitter-ra")
+@ResourceAdapter("twitter-ra.rar")
 public class TwitterMDB implements TweetListener {
     public void onTweet(Tweet t) {
         System.out.println(t);
