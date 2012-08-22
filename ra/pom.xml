@@ -6,7 +6,7 @@
   <parent>
     <groupId>jp.programmers.resource.adapter</groupId>
     <artifactId>twitter-ra-parent</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
   </parent>
   <artifactId>twitter-ra</artifactId>
   <packaging>rar</packaging>
@@ -21,7 +21,7 @@
       <groupId>jp.programmers.resource.adapter</groupId>
       <artifactId>twitter-ra-impl</artifactId>
       <type>jar</type>
-      <version>0.1</version>
+      <version>0.2</version>
     </dependency>
   </dependencies>
 

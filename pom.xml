@@ -6,7 +6,7 @@
   <groupId>jp.programmers.resource.adapter</groupId>
   <artifactId>twitter-ra-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.1</version>
+  <version>0.2</version>
 
   <properties>
     <twitter4j.version>2.2.6</twitter4j.version>
