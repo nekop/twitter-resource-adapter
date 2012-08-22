@@ -64,4 +64,12 @@ public class TwitterResourceAdapter implements ResourceAdapter {
         return context;
     }
 
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    public int hashCode() {
+        return super.hashCode();
+    }
+
 }
