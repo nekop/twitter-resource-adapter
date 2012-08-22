@@ -8,6 +8,10 @@
   <packaging>pom</packaging>
   <version>0.1</version>
 
+  <properties>
+    <twitter4j.version>2.2.6</twitter4j.version>
+  </properties>
+
   <modules>
     <module>impl</module>
     <module>ra</module>

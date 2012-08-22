@@ -15,7 +15,7 @@
     <dependency>
       <groupId>org.twitter4j</groupId>
       <artifactId>twitter4j-core</artifactId>
-      <version>2.2.4</version>
+      <version>${twitter4j.version}</version>
     </dependency>
     <dependency>
       <groupId>org.jboss.spec</groupId>

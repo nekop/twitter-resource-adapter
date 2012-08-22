@@ -9,14 +9,14 @@
   <version>0.1</version>
 
   <properties>
-    <twitter4j.version>2.2.4</twitter4j.version>
+    <twitter4j.version>2.2.6</twitter4j.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.twitter4j</groupId>
       <artifactId>twitter4j-core</artifactId>
-      <version>2.2.4</version>
+      <version>${twitter4j.version}</version>
     </dependency>
     <dependency>
       <groupId>jp.programmers.resource.adapter</groupId>
